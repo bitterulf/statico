@@ -12,6 +12,8 @@ if (!fs.existsSync('./generated')){
 
 const files = [];
 
+const template = fs.readFileSync('./template.html').toString();
+
 walker('./content')
     .on('file', function(file) {
         if (file.indexOf('.md') > -1) {
@@ -23,6 +25,9 @@ walker('./content')
 
         files.forEach(function(filename) {
             const data = fs.readFileSync(filename).toString();
-            fs.writeFileSync(filename.replace('content/', 'generated/').replace('.md', '.html'), md.render(data));
+            const html = md.render(data).toString();
+
+            const fullHtml = template.replace('{{BODY}}', html);
+            fs.writeFileSync(filename.replace('content/', 'generated/').replace('.md', '.html'), fullHtml);
         });
     });
