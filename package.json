@@ -1,0 +1,24 @@
+{
+  "name": "statico",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "generate": "node generate.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bitterulf/statico.git"
+  },
+  "author": "",
+  "license": "",
+  "bugs": {
+    "url": "https://github.com/bitterulf/statico/issues"
+  },
+  "homepage": "https://github.com/bitterulf/statico#readme",
+  "dependencies": {
+    "markdown-it": "^8.4.0",
+    "walker": "^1.0.7"
+  }
+}
